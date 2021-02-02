@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PrismMetroSample.PatientModule.Views.PatientList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PrismMetroSample.PatientModule.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="PatientModule" FontSize="25" Margin="5"/>
+        <DataGrid x:Name="dgPatient" Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Patients}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Sex" Binding="{Binding Sex}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="RoomNo" Binding="{Binding RoomNo}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

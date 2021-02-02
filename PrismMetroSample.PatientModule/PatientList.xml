@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patients>
+  <Patient ID="1" Name="Lina" Age="18" Sex="女" RoomNo="A-501"/>
+  <Patient ID="2" Name="Ryzen" Age="20" Sex="男" RoomNo="B-501"/>
+  <Patient ID="3" Name="Joy" Age="22" Sex="男" RoomNo="C-501"/>
+  <Patient ID="4" Name="Jack" Age="24" Sex="男" RoomNo="D-501"/>
+</Patients>

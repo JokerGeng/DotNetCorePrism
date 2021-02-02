@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Data>
+  <Medicines>
+    <Medicine ID="1" Name="当归" Type="中药" Unit="克"/>
+    <Medicine ID="2" Name="人参" Type="中药" Unit="克"/>
+    <Medicine ID="3" Name="枸杞" Type="中药" Unit="克"/>
+    <Medicine ID="4" Name="青霉素" Type="西药" Unit="瓶"/>
+    <Medicine ID="5" Name="琼浆玉露" Type="仙药" Unit="滴"/>
+  </Medicines>
+</Data>
