@@ -18,7 +18,7 @@ namespace PrismMetroSample.PatientModule.ViewModels
         {
             _ea = ea;
             //订阅事件
-            _ea.GetEvent<PatientSentEvent>().Subscribe(PatientMessageReceived)
+            _ea.GetEvent<PatientSentEvent>().Subscribe(PatientMessageReceived);
         }
 
         private void PatientMessageReceived(Patient  patient)

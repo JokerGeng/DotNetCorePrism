@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationCommands.cs" />
+    <Compile Include="Events\MedicineSentEvent.cs" />
     <Compile Include="Events\PatientSentEvent.cs" />
     <Compile Include="Modules\Medicine.cs" />
     <Compile Include="Modules\Patient.cs" />

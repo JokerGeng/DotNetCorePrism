@@ -19,5 +19,6 @@
         <Button  Content="Load MedicineModule" FontSize="25"  Margin="5" Command="{Binding LoadMedicineModuleCommand}"/>
         <ContentControl x:Name="patientListRegion" Grid.Row="1" prism:RegionManager.RegionName="{x:Static regions:RegionNames.PatientListRegion}" Margin="10"/>
         <ContentControl x:Name="medicineMainContentRegion" Grid.Row="2" prism:RegionManager.RegionName="{x:Static regions:RegionNames.MedicineMainContentRegion}"/>
+        <ContentControl x:Name="patienDetailRegion" Grid.Row="3" prism:RegionManager.RegionName="{x:Static regions:RegionNames.FlyoutRegion}"/>
     </Grid>
 </Window>

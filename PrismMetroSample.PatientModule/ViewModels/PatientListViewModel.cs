@@ -1,7 +1,10 @@
-﻿using Prism.Events;
+﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
+using PrismMetroSample.Infrastructure;
 using PrismMetroSample.Infrastructure.Models;
 using PrismMetroSample.Infratructure;
+using PrismMetroSample.Infratructure.Events;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,6 +22,8 @@ namespace PrismMetroSample.PatientModule.ViewModels
 
         private ObservableCollection<Patient> _allPatients = new ObservableCollection<Patient>();
 
+        private DelegateCommand<Patient> _mouseDoubleClickCommand;
+
         public PatientListViewModel(IEventAggregator ea, IApplicationCommands commands)
         {
             XDocument doc = XDocument.Load("PatientList.xml");
@@ -34,6 +39,10 @@ namespace PrismMetroSample.PatientModule.ViewModels
                 patient.RoomNo = medicineElement.Attribute("RoomNo").Value;
                 Patients.Add(patient);
             }
+
+            _ea = ea;
+            this.ApplicationCommands = commands;
+            MouseDoubleClickCommand = new DelegateCommand<Patient>(ExcuteMouseDoubleCLickCommand);
         }
 
         public ObservableCollection<Patient> Patients
@@ -53,5 +62,26 @@ namespace PrismMetroSample.PatientModule.ViewModels
             get { return _applicationCommands; }
             set { SetProperty(ref _applicationCommands, value); }
         }
+
+        public DelegateCommand<Patient> MouseDoubleClickCommand
+        {
+            get
+            {
+                return _mouseDoubleClickCommand;
+            }
+            set
+            {
+                SetProperty(ref _mouseDoubleClickCommand, value);
+            }
+        }
+
+        void ExcuteMouseDoubleCLickCommand(Patient patient)
+        {
+            //打开窗体
+            this.ApplicationCommands.ShowCommand.Execute(RegionNames.FlyoutRegion);
+            //发布消息
+            _ea.GetEvent<PatientSentEvent>().Publish(patient);
+        }
+
     }
 }
