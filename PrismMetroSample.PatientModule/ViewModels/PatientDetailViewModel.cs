@@ -21,12 +21,6 @@ namespace PrismMetroSample.PatientModule.ViewModels
             _ea.GetEvent<PatientSentEvent>().Subscribe(PatientMessageReceived);
         }
 
-        private void PatientMessageReceived(Patient  patient)
-        {
-            this.CurrentPatient = patient;
-            this.LstMedicnes = new ObservableCollection<Medicine>();
-        }
-
         private Patient _currentPatient;
 
         /// <summary>
@@ -55,5 +49,10 @@ namespace PrismMetroSample.PatientModule.ViewModels
             }
         }
 
+        private void PatientMessageReceived(Patient patient)
+        {
+            this.CurrentPatient = patient;
+            this.LstMedicnes = new ObservableCollection<Medicine>();
+        }
     }
 }

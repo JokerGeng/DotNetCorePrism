@@ -16,25 +16,14 @@ namespace PrismMetroSample.Shell.ViewModels
     public class ShellWindowViewModel:BindableBase
     {
         IModuleManager _moduleManager;
-        private IApplicationCommands _applicationCommands;
-        public ShellWindowViewModel(IModuleManager moduleManager, IApplicationCommands commands)
+        public ShellWindowViewModel(IModuleManager moduleManager)
         {
             _moduleManager = moduleManager;
-            LoadMedicineModuleCommand = new DelegateCommand(LoadMedicineModuleCommandExcute);
-            LoadPatientDetailRegionCommand = new DelegateCommand(LoadPatientDetailRegionCommandExcute);
             _moduleManager.LoadModuleCompleted += _moduleManager_LoadModuleCompleted;
-            this._applicationCommands = commands;
-            this._applicationCommands.ShowCommand.RegisterCommand(LoadPatientDetailRegionCommand);
+            LoadMedicineModuleCommand = new DelegateCommand(LoadMedicineModuleCommandExcute);
         }
 
         public DelegateCommand LoadMedicineModuleCommand { get; set; }
-        public DelegateCommand LoadPatientDetailRegionCommand { get; set; }
-        public IApplicationCommands ApplicationCommands
-        {
-            get { return _applicationCommands; }
-            set { SetProperty(ref _applicationCommands, value); }
-        }
-
         void LoadMedicineModuleCommandExcute()
         {
             //手动加载模块
@@ -43,12 +32,16 @@ namespace PrismMetroSample.Shell.ViewModels
 
         private void _moduleManager_LoadModuleCompleted(object sender, LoadModuleCompletedEventArgs e)
         {
-            MessageBox.Show($"{e.ModuleInfo.ModuleName} loaded");
-        }
-
-        void LoadPatientDetailRegionCommandExcute()
-        {
-            //_moduleManager.LoadModule(RegionNames.FlyoutRegion);
+            if (
+                MessageBox.Show($"{e.ModuleInfo.ModuleName} loaded", "ModuleLoad", MessageBoxButton.YesNo, MessageBoxImage.Question)
+            == MessageBoxResult.Yes)
+            {
+                MessageBox.Show("Yes");
+            }
+            else
+            {
+                MessageBox.Show("No");
+            }
         }
     }
 }

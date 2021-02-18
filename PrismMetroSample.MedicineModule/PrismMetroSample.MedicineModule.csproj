@@ -71,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModels\MedicineMainContentViewModel.cs" />
-    <Compile Include="ViewModels\ShowSearchPatient.cs" />
+    <Compile Include="ViewModels\ShowSearchPatientViewModel.cs" />
     <Compile Include="Views\MedicineMainContent.xaml.cs">
       <DependentUpon>MedicineMainContent.xaml</DependentUpon>
     </Compile>

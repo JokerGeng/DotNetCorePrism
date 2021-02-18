@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PrismMetroSample.MedicineModule.ViewModels
 {
-    public class ShowSearchPatient: BindableBase
+    public class ShowSearchPatientViewModel: BindableBase
     {
-        public ShowSearchPatient()
+        public ShowSearchPatientViewModel()
         {
 
         }

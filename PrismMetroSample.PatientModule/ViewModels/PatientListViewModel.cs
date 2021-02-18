@@ -18,11 +18,6 @@ namespace PrismMetroSample.PatientModule.ViewModels
     public class PatientListViewModel:BindableBase
     {
         IEventAggregator _ea;
-        private IApplicationCommands _applicationCommands;
-
-        private ObservableCollection<Patient> _allPatients = new ObservableCollection<Patient>();
-
-        private DelegateCommand<Patient> _mouseDoubleClickCommand;
 
         public PatientListViewModel(IEventAggregator ea, IApplicationCommands commands)
         {
@@ -42,9 +37,9 @@ namespace PrismMetroSample.PatientModule.ViewModels
 
             _ea = ea;
             this.ApplicationCommands = commands;
-            MouseDoubleClickCommand = new DelegateCommand<Patient>(ExcuteMouseDoubleCLickCommand);
         }
 
+        private ObservableCollection<Patient> _allPatients = new ObservableCollection<Patient>();
         public ObservableCollection<Patient> Patients
         {
             get
@@ -57,28 +52,20 @@ namespace PrismMetroSample.PatientModule.ViewModels
             }
         }
 
+        private IApplicationCommands _applicationCommands;
         public IApplicationCommands ApplicationCommands
         {
             get { return _applicationCommands; }
             set { SetProperty(ref _applicationCommands, value); }
         }
 
-        public DelegateCommand<Patient> MouseDoubleClickCommand
-        {
-            get
-            {
-                return _mouseDoubleClickCommand;
-            }
-            set
-            {
-                SetProperty(ref _mouseDoubleClickCommand, value);
-            }
-        }
+        private DelegateCommand<Patient> _mouseDoubleClickCommand;
+        public DelegateCommand<Patient> MouseDoubleClickCommand => _mouseDoubleClickCommand ?? (_mouseDoubleClickCommand = new DelegateCommand<Patient>(ExcuteMouseDoubleCLickCommand));
 
         void ExcuteMouseDoubleCLickCommand(Patient patient)
         {
             //打开窗体
-            this.ApplicationCommands.ShowCommand.Execute(RegionNames.FlyoutRegion);
+            //this.ApplicationCommands.ShowCommand.Execute(RegionNames.FlyoutRegion);
             //发布消息
             _ea.GetEvent<PatientSentEvent>().Publish(patient);
         }
