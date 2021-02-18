@@ -19,7 +19,7 @@ namespace PrismMetroSample.PatientModule
 
             ///为指定区域指定页面
             regionManager.RegisterViewWithRegion(RegionNames.PatientListRegion, typeof(PatientList));
-            regionManager.RegisterViewWithRegion(RegionNames.FlyoutRegion, typeof(PatientDetail));
+            //regionManager.RegisterViewWithRegion(RegionNames.FlyoutRegion, typeof(PatientDetail));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

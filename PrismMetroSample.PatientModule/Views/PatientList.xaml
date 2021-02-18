@@ -26,6 +26,5 @@
                 <DataGridTextColumn Header="RoomNo" Binding="{Binding RoomNo}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </UserControl>

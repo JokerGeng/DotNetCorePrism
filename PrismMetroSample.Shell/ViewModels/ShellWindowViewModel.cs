@@ -36,11 +36,11 @@ namespace PrismMetroSample.Shell.ViewModels
                 MessageBox.Show($"{e.ModuleInfo.ModuleName} loaded", "ModuleLoad", MessageBoxButton.YesNo, MessageBoxImage.Question)
             == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Yes");
+                //MessageBox.Show("Yes");
             }
             else
             {
-                MessageBox.Show("No");
+                //MessageBox.Show("No");
             }
         }
     }
