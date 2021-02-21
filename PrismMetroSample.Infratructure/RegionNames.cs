@@ -13,7 +13,8 @@ namespace PrismMetroSample.Infrastructure
         /// <summary>
         /// 弹出框
         /// </summary>
-        public const string FlyoutRegion = "FlyoutRegion";
+        public const string FlyoutRegion = "FlyoutRegion"; 
         public const string ShowSearchPatientRegion = "ShowSearchPatientRegion";
+        public static string LoginContentRegion = "LoginContentRegion";
     }
 }

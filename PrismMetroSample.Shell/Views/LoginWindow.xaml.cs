@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PrismMetroSample.MedicineModule.Views
+namespace PrismMetroSample.Shell.Views
 {
     /// <summary>
-    /// ShowSearchPatient.xaml 的交互逻辑
+    /// LoginWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class ShowSearchPatient : StackPanel
+    public partial class LoginWindow : Window
     {
-        public ShowSearchPatient()
+        public LoginWindow()
         {
             InitializeComponent();
         }

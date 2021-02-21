@@ -64,6 +64,7 @@
     <Compile Include="ApplicationCommands.cs" />
     <Compile Include="Events\MedicineSentEvent.cs" />
     <Compile Include="Events\PatientSentEvent.cs" />
+    <Compile Include="FlyoutNames.cs" />
     <Compile Include="Modules\Medicine.cs" />
     <Compile Include="Modules\Patient.cs" />
     <Compile Include="Modules\Recipe.cs" />
@@ -73,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Photos\alter.png" />
+    <Content Include="Photos\Home, homepage, menu.png" />
+    <Content Include="Photos\success.png" />
+    <Content Include="Photos\按钮.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

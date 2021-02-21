@@ -6,16 +6,30 @@
         xmlns:local="clr-namespace:PrismMetroSample.Shell"
         xmlns:regions="clr-namespace:PrismMetroSample.Infrastructure;assembly=PrismMetroSample.Infratructure"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="800">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadingCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Button  Content="Load MedicineModule" FontSize="25"  Margin="5" Command="{Binding LoadMedicineModuleCommand}"/>
+        <StackPanel Grid.Row="0">
+            <Button  Content="Load MedicineModule" FontSize="25"  Margin="5" Command="{Binding LoadMedicineModuleCommand}"/>
+            <UniformGrid Margin="5">
+                <Button Content="ActivePaientList" Margin="5" Command="{Binding ActivePaientListCommand}"/>
+                <Button Content="DeactivePaientList" Margin="5" Command="{Binding DeactivePaientListCommand}"/>
+                <Button Content="ActiveMedicineList" Margin="5" Command="{Binding ActiveMedicineListCommand}"/>
+                <Button Content="DeactiveMedicineList" Margin="5" Command="{Binding DeactiveMedicineListCommand}"/>
+            </UniformGrid>
+        </StackPanel>
         <ContentControl x:Name="patientListRegion" Grid.Row="1" prism:RegionManager.RegionName="{x:Static regions:RegionNames.PatientListRegion}" Margin="10"/>
         <ContentControl x:Name="medicineMainContentRegion" Grid.Row="2" prism:RegionManager.RegionName="{x:Static regions:RegionNames.MedicineMainContentRegion}"/>
     </Grid>
