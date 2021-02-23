@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationCommands.cs" />
+    <Compile Include="Converts\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converts\PasswordConverter.cs" />
     <Compile Include="Events\MedicineSentEvent.cs" />
     <Compile Include="Events\PatientSentEvent.cs" />
     <Compile Include="FlyoutNames.cs" />
@@ -76,10 +78,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Photos\alter.png" />
-    <Content Include="Photos\Home, homepage, menu.png" />
-    <Content Include="Photos\success.png" />
-    <Content Include="Photos\按钮.png" />
+    <Resource Include="Photos\alter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Photos\Home, homepage, menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Photos\success.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Photos\按钮.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

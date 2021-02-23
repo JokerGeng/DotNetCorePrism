@@ -8,13 +8,13 @@ namespace PrismMetroSample.Infrastructure
 {
     public static class RegionNames
     {
-        public const string MedicineMainContentRegion = "MedicineMainContentRegion";
-        public const string PatientListRegion = "PatientListRegion";
+        public static string MedicineMainContentRegion = "MedicineMainContentRegion";
+        public static string PatientListRegion = "PatientListRegion";
         /// <summary>
         /// 弹出框
         /// </summary>
-        public const string FlyoutRegion = "FlyoutRegion"; 
-        public const string ShowSearchPatientRegion = "ShowSearchPatientRegion";
+        public static string FlyoutRegion = "FlyoutRegion"; 
+        public static string ShowSearchPatientRegion = "ShowSearchPatientRegion";
         public static string LoginContentRegion = "LoginContentRegion";
     }
 }

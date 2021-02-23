@@ -9,7 +9,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:region="clr-namespace:PrismMetroSample.Infrastructure;assembly=PrismMetroSample.Infratructure"
         Height="600" Width="400" prism:ViewModelLocator.AutoWireViewModel="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
-        Icon="pack://application:,,,/PrismMetroSample.Infrastructure;Component/Photos/Home, homepage, menu.png">
+        Icon="pack://application:,,,/PrismMetroSample.Infratructure;Component/Photos/Home, homepage, menu.png">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoginLoadingCommand}"/>

@@ -71,7 +71,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\LoginWindow.xaml">
+    <Page Include="Style\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login\CreateAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialog\SuccessDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dialog\WarningDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login\LoginMainContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,8 +103,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ShellSwitcher.cs" />
+    <Compile Include="ViewModels\Login\CreateAccountViewModel.cs" />
+    <Compile Include="ViewModels\Login\LoginMainContentViewModel.cs" />
+    <Compile Include="ViewModels\Login\LoginWindowViewModel.cs" />
     <Compile Include="ViewModels\ShellWindowViewModel.cs" />
-    <Compile Include="Views\LoginWindow.xaml.cs">
+    <Compile Include="ViewModels\Dialog\SuccessDialogViewModel.cs" />
+    <Compile Include="ViewModels\Dialog\WarningDialogViewModel.cs" />
+    <Compile Include="Views\Login\CreateAccount.xaml.cs">
+      <DependentUpon>CreateAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialog\SuccessDialog.xaml.cs">
+      <DependentUpon>SuccessDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialog\WarningDialog.xaml.cs">
+      <DependentUpon>WarningDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginMainContent.xaml.cs">
+      <DependentUpon>LoginMainContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellWindow.xaml.cs">
@@ -117,7 +155,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
